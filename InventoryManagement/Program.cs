@@ -31,15 +31,47 @@ namespace InventoryManagement
                 {
                     case 1:
                         AddItem.Add(items, prices, quantities);
+                        Console.WriteLine("Would you like to add another item? (Y/N)");
+                        string addAnother = Console.ReadLine();
+                        while (addAnother.ToLower() == "y" )
+                        {
+                            AddItem.Add(items, prices, quantities);
+                            Console.WriteLine("Would you like to add another item? (Y/N)");
+                            addAnother = Console.ReadLine();
+                        }
                         break;
                     case 2:
                         RemoveItem.Remove(items, prices, quantities);
+                        Console.WriteLine("Would you like to remove another item? (Y/N)");
+                        string removeAnother = Console.ReadLine();
+                        while (removeAnother.ToLower() == "y")
+                        {
+                            RemoveItem.Remove(items, prices, quantities);
+                            Console.WriteLine("Would you like to remove another item? (Y/N)");
+                            removeAnother = Console.ReadLine();
+                        }
                         break;
                     case 3:
                         UpdateItem.Update(items, prices, quantities);
+                        Console.WriteLine("Would you like to update another item? (Y/N)");
+                        string updateAnother = Console.ReadLine();
+                        while (updateAnother.ToLower() == "y")
+                        {
+                            UpdateItem.Update(items, prices, quantities);
+                            Console.WriteLine("Would you like to update another item? (Y/N)");
+                            updateAnother = Console.ReadLine();
+                        }
                         break;
                     case 4:
                         ViewItem.View(items, prices, quantities);
+                        Console.WriteLine("Would you like to view items again? (Y/N)");
+                        string viewAnother = Console.ReadLine();
+                        while (viewAnother.ToLower() == "y")
+                        {
+                            ViewItem.View(items, prices, quantities);
+                            Console.WriteLine("Would you like to view items again? (Y/N)");
+                            viewAnother = Console.ReadLine();
+                        }
                         break;
                     case 5:
                         Environment.Exit(0);
