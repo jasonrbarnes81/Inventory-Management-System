@@ -6,6 +6,8 @@ namespace InventoryManagement
     {
         public static void Remove(List<string> items, List<double> prices, List<int> quantities)
         {
+            ViewItem.View(items, prices, quantities);
+            Console.WriteLine();
             Console.WriteLine("Enter the item name to remove:");
             string item = Console.ReadLine();
             int index = items.IndexOf(item);

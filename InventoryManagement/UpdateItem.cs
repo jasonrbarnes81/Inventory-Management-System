@@ -6,6 +6,8 @@ namespace InventoryManagement
     {
         public static void Update(List<string> items, List<double> prices, List<int> quantities)
         {
+            ViewItem.View(items, prices, quantities);
+            Console.WriteLine();
             Console.WriteLine("Enter the item name to update:");
             string item = Console.ReadLine();
             int index = items.IndexOf(item);
@@ -15,10 +17,6 @@ namespace InventoryManagement
             }
             else
             {
-                Console.WriteLine("Enter the new item name:");
-                string newItem = Console.ReadLine();
-                items[index] = newItem;
-
                 Console.WriteLine("Enter the new price:");
                 double newPrice = Convert.ToDouble(Console.ReadLine());
                 prices[index] = newPrice;
